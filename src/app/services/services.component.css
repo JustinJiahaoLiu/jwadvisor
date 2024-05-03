@@ -1,0 +1,82 @@
+p {
+  font-size: 17px;
+}
+/*---------------Banner------------------*/
+.banner-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-caption {
+  font-weight: normal; 
+  font-size: 3rem;
+  position: absolute;
+  top: 54% !important;
+  left:65%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
+
+}
+.carousel-sub-caption {
+  color: white;
+  font-weight: normal; 
+  font-size: 2rem;
+  position: absolute;
+  top: 58%;
+  left:68%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
+}
+
+.tax-return-banner {
+  background: #e9e3f4;
+}
+
+#smsf-title {
+  font-weight: 300;
+}
+
+/*---------------Icon------------------*/
+.icon {
+  font-size: 4rem;
+  color: rgba(4, 8, 255, 0.7);
+}
+
+.grow { transition: all .5s ease-in-out; }
+.grow:hover { transform: scale(1.5); color: #040BDB;}
+
+
+/*---------------Responsive------------------*/
+@media screen and (min-width:1509px){
+  .carousel-caption {
+    top: 60%;
+  }
+
+
+}
+
+
+@media screen and (max-width:1024px){
+  .banner-wrap {
+    margin-top: 88px;
+  }
+
+.carousel-caption {
+top: 40%;
+font-size: 1.5rem;
+}
+}
+
+
+
+@media screen and (max-width:600px){
+  .banner-wrap {
+    margin-top: 88px;
+  }
+
+  .carousel-caption {
+    top: 30%;
+    font-size: 1rem;
+  }
+}

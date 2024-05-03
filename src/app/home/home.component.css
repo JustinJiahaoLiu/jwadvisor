@@ -1,0 +1,156 @@
+p {
+    font-size: 17px;
+}
+/*---------------Background------------------*/
+#home-wrap {
+    background-image: url(../../assets/img/background.jpg);
+    background-size:cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.middle-banner {
+    background: rgba(0,0,0,0.3);
+    color: white;
+}
+
+.middle-banner-icon {
+    font-size: 4rem;
+    color: rgba(4, 8, 255, 0.7);
+}
+
+/*---------------Buttons------------------*/
+
+#service-button{
+    background: rgba(0,0,0,0);
+    text-align: center;
+    padding: 100px 0;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+    font-size: 30px;
+}
+
+#contact-button{
+    background: rgba(108,108,255,0.5);
+    padding: 100px 0;
+    color: white;
+    font-size: 30px;
+}
+
+/*---------------Carousel------------------*/
+.carousel-caption {
+    font-weight: bold; 
+    font-size: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left:28%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
+}
+.carousel-sub-caption {
+    color: white;
+    font-weight: normal; 
+    font-size: 2rem;
+    position: absolute;
+    top: 58%;
+    left:28%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
+}
+.carousel-sub-2-caption {
+    color:white;
+    font-weight: normal; 
+    font-size: 2rem;
+    position: absolute;
+    top: 64%;
+    left:28%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%,-50%);
+}
+#focus{
+    font-weight: 300;
+}
+.focus-subtitle {
+    border-bottom: 2px solid #007bff;
+}
+
+/*---------------Best Banner------------------*/
+#we-are-best{
+    font-weight: 300;
+    border-left: 5px solid #007bff;
+    padding-left: 10px;
+}
+.best-banner {
+    background: #e9e3f4;
+}
+
+.button-banner {
+    font-size: 3rem;
+    font-weight: 100;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+/*---------------Responsive------------------*/
+
+@media screen and (min-width:1509px){
+    .carousel-caption {
+        top: 60%;
+    }
+}
+
+
+@media screen and (max-width:1024px){
+    .carousel-inner {
+        margin-top: 88px;
+    }
+
+    .carousel-caption {
+        top: 40%;
+        font-size: 2.5rem;
+    }
+
+    #service-button{
+        font-size: 25px;
+    }
+
+    #contact-button{
+        font-size: 25px;
+    }
+
+    #focus{
+        font-size: 2.5rem;
+    }
+
+    #home-wrap {
+        background-image: url(../../assets/img/background_2.jpg);
+        background-size:cover;
+    }
+}
+
+
+@media screen and (max-width:600px){
+    .carousel-inner {
+        margin-top: 88px;
+    }
+
+    .carousel-caption {
+        top: 30%;
+        font-size: 1.5rem;
+    }
+
+    #focus{
+        font-size: 1.5rem;
+    }
+
+    #service-button{
+        font-size: 23px;
+    }
+
+    #contact-button{
+        font-size: 23px;
+    }
+
+}

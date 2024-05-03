@@ -1,0 +1,106 @@
+
+<div class="container-fluid jumbotron pt-0 pb-0" style="margin:89px auto 0 auto;">
+	<div class="col-lg-8 col-xl-8 mx-auto mb-4 pl-5" style="background:#6c757d;">
+		<div class="text-left" >
+		<!-- <div class="elementor-custom-embed"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13280.136430647699!2d150.9160726!3d-33.682181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b845a46648a6663!2sAustralia%20Post%20-%20Rouse%20Hill%20LPO!5e0!3m2!1sen!2sau!4v1614829531899!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></div> -->
+		<div class="intro pl-4 pr-4 pt-4">
+		<h3>JW Advisors Pty Ltd</h3>
+		<p>We are specializing in providing affordable, professional accountancy, tax service and advice for individuals and small to medium businesses.</p>
+		<p>Our vision is to provide local, affordable and professional tax advice for individuals and small to medium businesses.We provide the following services for individuals and small to medium businesses.</p>
+		<ul>
+			<li>Tax Advice</li>
+			<li>Accountancy Services and Book Keeping for Sole Traders, Partnerships, Companies, Trusts and Self-managed Superannuation funds</li>
+			<li>Superannuation Management</li>
+			<li>Trust Management</li>
+		</ul>
+		</div>
+		</div>
+		</div>
+<div class="container">
+<div class="row">
+	<div class="col-lg-5 col-xl-5mx-auto mb-4 text-left">
+		<h2>Contact us</h2>
+		<p>Phone: <a href="tel:+61280061201">02 8006 1201</a></p>
+		<p>Email: <a href="mailto: info@jwadvisors.com.au">info@jwadvisors.com.au</a></p>
+		<p>Address: <a href="#">Level 20 Tower A, 821 Pacific Highway, Chatswood NSW 2067</a></p>
+
+		<h2>Email us</h2>
+		<form #form #messageForm="ngForm" action="/message_service.php" method="POST">
+			<div class="form-group">
+		    <label for="enquiry">My enquiry is related to …</label>
+		    <select class="form-control" id="enquiry" name="enquiry">
+		    	<option disabled>--Choose--</option>
+				<option>Tax Return</option>
+		      	<option>Tax Advice</option>
+		      	<option>Self Managed Super</option>
+		    </select>
+		  	</div>
+
+		  <div class="form-group" >
+		  <label for="name">Name<span class="text-danger">*</span></label>
+		  <div class="form-row" id="name">
+		    <div class="col">
+		      <input required type="text" class="form-control" name="firstName" placeholder="First name" 
+		      [(ngModel)]="firstName" #firstNameControl = "ngModel" [class.is-invalid]="firstNameControl.invalid&&firstNameControl.touched" [class.is-valid]="firstNameControl.valid">
+		      <span class="text-danger" *ngIf="firstNameControl.invalid&&firstNameControl.touched">First name is required</span>
+		    </div>
+		    <div class="col">
+		      <input required type="text" class="form-control" name="lastName" placeholder="Last name" [(ngModel)] = "lastName" #lastNameControl="ngModel" [class.is-invalid]="lastNameControl.invalid&&lastNameControl.touched" [class.is-valid]="lastNameControl.valid">
+		      <span class="text-danger" *ngIf="lastNameControl.invalid&&lastNameControl.touched">Last name is required</span>
+		    </div>
+		  </div>
+		</div>
+
+			<div class="form-group">
+		    <label for="email">Email Address<span class="text-danger">*</span></label>
+		    <input required email type="email" class="form-control" id="email" name="email" placeholder="name@example.com" [(ngModel)]="email" #emailControl="ngModel" [class.is-invalid]="emailControl.invalid&&emailControl.touched" [class.is-valid]="emailControl.valid">
+		    <span class="text-danger" *ngIf="emailControl.errors?.required&&emailControl.touched">Email address is required</span>
+		    <span class="text-danger" *ngIf="emailControl.errors?.email&&emailControl.touched">Email address is invalid</span>
+		  	</div>
+
+		  	<div class="form-group">
+		    <label for="phone">Contact Number<span class="text-danger">*</span></label>
+		    <input required pattern="[0-9]{10}" type="tel" class="form-control" id="phone" name="phone" placeholder="0400000000" [(ngModel)]="phone" #phoneControl="ngModel" [class.is-invalid]="phoneControl.invalid&&phoneControl.touched" [class.is-valid]="phoneControl.valid">
+		    <span class="text-danger" *ngIf="phoneControl.errors?.required&&phoneControl.touched">Contact number is required</span>
+		    <span class="text-danger" *ngIf="phoneControl.errors?.pattern&&phoneControl.touched">Contact number is invalid</span>
+		  	</div>
+
+		  	<div class="form-group">
+		    <label for="contactMethod">Preferred contact method</label>
+		    <select class="form-control" id="contactMethod" name="contactMethod">
+		    	<option disabled>--Choose--</option>
+				<option>Email</option>
+		      	<option>Contact Number</option>
+		    </select>
+		  	</div>		  
+
+		  <div class="form-group">
+		    <label for="message">Comment or Message<span class="text-danger">*</span></label>
+		    <textarea required class="form-control" id="message" rows="3" name="message" placeholder="Enter message here" [(ngModel)]="message" #messageControl="ngModel" [class.is-invalid]="messageControl.invalid&&messageControl.touched" [class.is-valid]="messageControl.valid"></textarea>
+		    <span class="text-danger" *ngIf="messageControl.invalid&&messageControl.touched">Message content is required</span>
+		  </div>
+
+		  <div class="g-recaptcha" data-sitekey="6LedydQUAAAAAI9RvA6-uhwSiAkG3_oMeYAupe-T"></div>
+		  <span class="text-danger" *ngIf="messageRes=='401'">Recaptcha failed! Please try again</span><br/>
+      		
+		  <button type="submit" class="btn btn-primary mb-2" onClick="submitForm()" [disabled]="messageForm.invalid">Submit</button>
+		</form>
+	
+	</div>
+</div><!--div row -->
+</div>
+</div>
+
+<div *ngIf="messageRes=='200'" class="dialog bg-dark text-center">
+    <h5>Thank you for your message. We will contact you soon.</h5>
+    <button class="btn btn-secondary" id="buttonOk" (click)="close()">OK</button>
+</div>
+<div *ngIf="messageRes=='200'" class="overlay" (click)="close()"></div>
+
+<div *ngIf="messageRes=='500'" class="dialog bg-danger text-center">
+    <h5>Service error! Please try again later.</h5>
+    <button class="btn btn-warning" id="buttonOk" (click)="close()">OK</button>
+</div>
+<div *ngIf="messageRes=='500'" class="overlay" (click)="close()"></div>
+
+
